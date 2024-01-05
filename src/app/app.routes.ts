@@ -11,11 +11,13 @@ import { Title } from "@angular/platform-browser";
   selector: "app-menu",
   template: `
     <ul>
-      <li *ngFor="let item of menuItems">
-        <a [routerLink]="['/', item.id]" routerLinkActive="active-page">{{
-          item.title
-        }}</a>
-      </li>
+      @for (item of menuItems; track item.id) {
+        <li>
+            <a [routerLink]="['/', item.id]" routerLinkActive="active-page">{{
+              item.title
+            }}</a>
+        </li>
+      }
     </ul>
   `,
   standalone: true,
@@ -28,6 +30,7 @@ export class MenuComponent {
 export abstract class BasePage {
   abstract title: string;
 
+  // this is causes a problem with change detection which spirals into an infinite loop
   get menuItems() {
     return [
       { title: `From ${this.title} to First`, id: "first" },

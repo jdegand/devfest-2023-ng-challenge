@@ -11,3 +11,13 @@ Run the application, and you will see three links on the main page. Clicking on 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
+## Thoughts
+
+- This problem is a long standing problem in Angular.
+- The crux of the problem is that change detection checks causes an infinite loop when you use `*ngFor` and `get` together.  
+- Simpliest solution: upgrade to Angular 17 and use its new template syntax.
+
+## Useful Resources
+
+- [Stack Overflow](https://stackoverflow.com/questions/47384521/angular-router-link-stops-working) - router link stops working
+- [Github](https://github.com/angular/angular/issues/20995) - RouterLinkActive Causes Browser To Freeze When Inside NgFor #20995
