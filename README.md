@@ -14,8 +14,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 ## Thoughts
 
 - This problem is a long standing problem in Angular.
-- The crux of the problem is that change detection checks causes an infinite loop when you use `*ngFor` and `routerLinkActive` together.  `Get` Inputs also may play a part in the problem.  
+- The crux of the problem is that change detection checks causes an infinite loop when you use `*ngFor` and `routerLinkActive` together.  `Get` inputs may also play a part in the problem.  
 - Simpliest solution: upgrade to Angular 17 and use its new template syntax.
+- After installing the Angular 17 packages, I had to change `browserTarget` to `buildTarget` in the `angular.json`.
+- I removed `vendorChunk: true` from the `angular.json` as well.  
 
 ## Useful Resources
 
