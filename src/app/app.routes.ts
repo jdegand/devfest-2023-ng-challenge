@@ -30,7 +30,6 @@ export class MenuComponent {
 export abstract class BasePage {
   abstract title: string;
 
-  // this is causes a problem with change detection which spirals into an infinite loop
   get menuItems() {
     return [
       { title: `From ${this.title} to First`, id: "first" },
