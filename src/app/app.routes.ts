@@ -1,5 +1,4 @@
 import { Component, inject, Input } from "@angular/core";
-import { NgFor } from "@angular/common";
 import {
   RouterLink,
   Routes,
@@ -21,7 +20,7 @@ import { Title } from "@angular/platform-browser";
     </ul>
   `,
   standalone: true,
-  imports: [NgFor, RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive],
 })
 export class MenuComponent {
   @Input() menuItems: { title: string; id: string }[] = [];
